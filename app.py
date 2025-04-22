@@ -155,13 +155,18 @@ def show_home():
                     conf = pred[idx]
                 
                 st.markdown(f"""
-                <div class="result-card">
-                    <h3 style="color: #667eea;">Analysis Results</h3>
-                    <p style="font-size: 1.2em;">Most likely condition: <strong style="color: #764ba2;">{class_names[idx]}</strong></p>
-                    <p style="font-size: 1.2em;">Confidence level: <strong style="color: #764ba2;">{conf * 100:.2f}%</strong></p>
-                    <p style="color: #666; font-size: 0.9em;">Remember: This is not a medical diagnosis. Please consult a dermatologist for professional advice.</p>
-                </div>
-                """, unsafe_allow_html=True)
+    <div class="result-card">
+        <h3 style="color: #667eea;">Analysis Results</h3>
+        <p style="font-size: 1.2em;">
+            Most likely condition: <strong style="color: #764ba2;">{class_names[idx]}</strong>
+        </p>
+        <p style="color: #666; font-size: 0.9em;">
+            Remember: This is not a medical diagnosis.
+            Please consult a dermatologist for professional advice.
+        </p>
+    </div>
+""", unsafe_allow_html=True)
+
                 
                 # Prepare data for chart
                 df = pd.DataFrame({
